@@ -6,6 +6,7 @@
 --LOS DE BACKEND SIGAN LA ESTRUCTURA ADECUADA (todo en la carpeta src y agregen sus propias carpetas
 segun sean necesarias ej: src/routes/routes.ts)
 etc....
+CORRAN EL BACKEND EN EL PUERTO 4000!!
 --
 
 */
