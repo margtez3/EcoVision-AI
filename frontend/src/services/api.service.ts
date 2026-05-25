@@ -1,8 +1,8 @@
-//LOGICA DEL API SERVICE PARA FRONTEND ------------import axios from 'axios'
+//LOGICA DEL API SERVICE PARA FRONTEND
 import axios from "axios";
 import type { AnalysisResult } from "../types/analysis";
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3000";
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:4000";
 
 export async function analyzeImage(file: File): Promise<AnalysisResult> {
   const formData = new FormData();
@@ -11,7 +11,9 @@ export async function analyzeImage(file: File): Promise<AnalysisResult> {
   const response = await axios.post<AnalysisResult>(
     `${API_BASE}/analyze`,
     formData,
-    { headers: { "Content-Type": "multipart/form-data" } },
+    {
+      headers: { "Content-Type": "multipart/form-data" },
+    },
   );
   return response.data;
 }
@@ -27,4 +29,8 @@ export const mockResult: AnalysisResult = {
   confidence: 94,
   recommendation:
     "Lavar antes de reciclar y retirar la tapa. Depositar en contenedor azul sin aplastar para facilitar selección.",
+  imageUrl:
+    "https://ecovisionstorage.blob.core.windows.net/uploads/example.jpg",
+  fileName: "example.jpg",
+  analysisDate: new Date().toISOString(),
 };

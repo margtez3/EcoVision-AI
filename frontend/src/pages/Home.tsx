@@ -7,7 +7,7 @@ import ResultCard from "../components/ResultCard";
 import { analyzeImage, mockResult } from "../services/api.service";
 import type { AnalysisResult, AppState } from "../types/analysis";
 
-const USE_MOCK = true; // Cambia a false cuando el backend esté listo
+const USE_MOCK = false; // Backend real está listo
 
 export default function Home() {
   const [state, setState] = useState<AppState>("idle");
